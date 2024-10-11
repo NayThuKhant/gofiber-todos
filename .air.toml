@@ -1,0 +1,17 @@
+# .air.toml
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  include = ["*.go", "go.mod", "go.sum"]
+  exclude = ["tmp/**", "*.test"]
+  cmd = "go build -o ./tmp/main ./main.go"
+  watch = true
+
+[watch]
+  delay = 1000 # Delay in milliseconds before restarting
+
+[color]
+  main = "cyan"
+  watcher = "yellow"
+  err = "red"
